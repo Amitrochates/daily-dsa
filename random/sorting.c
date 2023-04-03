@@ -5,9 +5,22 @@ void swap(int *x, int *y)
     *x=*y;
     *y=temp;
 }
+void selection_sort(int a[], int n)
+{
+    for (int i=0; i<n;i++)
+    { int k;
+        for (int j=k=i;j<n;j++)
+        {
+            if (a[j]<a[k])
+            k=j;
+        }
+        swap (&a[i],&a[k]);
+        
+    }
+}
 void insert_sort(int a[], int n)
 {
-    for (int i=1; i<n;i++)
+    for (int i=1; i<n;i++)  
     {   
        int j=i-1;
        int x=a[i];
@@ -40,11 +53,12 @@ void bubble (int a[], int n)
     }
 }
 int main()
-{   int a[5]={9,3,4,6,5};
+{   int a[6]={9,15,4,6,5,1};
    // bubble(a,5);
-   insert_sort(a,5);
-    for (int i=0;i<5;i++)
-    printf("%d",a[i]);
+   //insert_sort(a,5);
+   selection_sort(a,6);
+    for (int i=0;i<6;i++)
+    printf("%d ",a[i]);
 
     return 0;
 }
